@@ -1,14 +1,14 @@
 public class Jugador {
     int numero;
-    String posicion;
+    String nombre;
     String equipo;
 
     public Jugador() {
     }
 
-    public Jugador(int numero, String posicion, String equipo) {
+    public Jugador(int numero, String nombre, String equipo) {
         this.numero = numero;
-        this.posicion = posicion;
+        this.nombre = nombre;
         this.equipo = equipo;
     }
 
@@ -20,12 +20,12 @@ public class Jugador {
         this.numero = numero;
     }
 
-    public String getPosicion() {
-        return posicion;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPosicion(String posicion) {
-        this.posicion = posicion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getEquipo() {
@@ -40,7 +40,7 @@ public class Jugador {
     public String toString() {
         return "Jugador{" +
                 "numero=" + numero +
-                ", posicion='" + posicion + '\'' +
+                ", Nombre='" + nombre + '\'' +
                 ", equipo='" + equipo + '\'' +
                 '}';
     }
