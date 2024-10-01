@@ -1,36 +1,59 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+    //Daniel Andres Silva Lopez - por el momento lo voy a dejar asi basico pero pienso ponerle mas cosas como vender jugador , comprar jugador etc
+        Scanner teclado=new Scanner(System.in);
+        Jugador[] jugadores = {
+                new Jugador(1, "David Ospina", "Atletico Nacional"),
+                new Jugador(3, "Mario Yepes", "Atlanta"),
+                new Jugador(12, "Daniel Muñoz", "Crystal Palace F. C"),
+                new Jugador(22, "Johan Mojica", "Real Club Deportivo Mallorca"),
+                new Jugador(10, "James Rodriguez", "Rayo Vallecano"),
+                new Jugador(6, "Richard Ríos", "SE Palmeiras"),
+                new Jugador(7, "Luis Dias", "Liverpool FC"),
+                new Jugador(11, "Jhon Arias", "Fluminense Football Club"),
+                new Jugador(9, "Miguel Borja", "CA River Plate"),
+                new Jugador(88, "Mateus Uribe", "Al-Sadd SC"),
+                new Jugador(19, "Rafael Borre", "Sport Club Internacional")
+        };
 
-     //Creacion de Jugadores :))
-     Jugador portero= new Jugador(1,"David Ospina","Atletico Nacional");
-     Jugador DefensaCentral= new Jugador(3,"Mario Yepes","Atlanta");
-     Jugador LateralDerecho= new Jugador(12," Daniel Muñoz","l Crystal Palace F. C");
-     Jugador LateralIzquierdo= new Jugador(22,"Johan Mojica","Real Club Deportivo Mallorca");
-     Jugador MedioCentroOfensivo= new Jugador(10,"James Rodriguez","Rayo Vallecano");
-     Jugador MedioCentro= new Jugador(6,"Richard Ríos","SE Palmeiras");
-     Jugador ExtremoIzquierdo= new Jugador(7,"Luis Dias","Liverpool FC");
-     Jugador ExtremoDerecho= new Jugador(11,"Jhon Arias","Fluminense Football Club");
-     Jugador DelanteroCentral= new Jugador(9,"Miguel Borja","CA River Plate");
-     Jugador Pivote= new Jugador(88," Mateus Uribe","Al-Sadd SC");
-     Jugador Delantero= new Jugador(19,"Rafael Borre","Sport Club Internacional");
-     Jugador Delantero2= new Jugador(18,"Daniel","millonarios");
 
-       //HashMap
-          Map<Integer,String>MapaEquipo=new HashMap<>();
-          MapaEquipo.put(1, "Portero"+portero+"\n");
-          MapaEquipo.put(2, "Defensa"+DefensaCentral+"\n");
-          MapaEquipo.put(3, "Lateral Derecho"+LateralDerecho+"\n");
-          MapaEquipo.put(4, "Lateral Izquierdo"+LateralIzquierdo+"\n");
-          MapaEquipo.put(5, "Medio Centro Ofensivo"+MedioCentroOfensivo+"\n");
-          MapaEquipo.put(6,"Medio Centro"+MedioCentro+"\n");
-          MapaEquipo.put(7,"Extremo Izquierdo"+ExtremoIzquierdo+"\n");
-          MapaEquipo.put(8,"Extremo Derecho"+ExtremoDerecho+"\n");
-          MapaEquipo.put(9,"Delantero Central"+DelanteroCentral+"\n");
-          MapaEquipo.put(10,"Pivote"+Pivote+"\n");
-          MapaEquipo.put(11,"Delantero"+Delantero+"\n");
-          System.out.println(MapaEquipo.values());
-    }
+        String[] posiciones = {
+                "Portero", "Defensa", "Lateral Derecho", "Lateral Izquierdo",
+                "Medio Centro Ofensivo", "Medio Centro", "Extremo Izquierdo",
+                "Extremo Derecho", "Delantero Central", "Pivote", "Delantero"
+        };
+
+
+        Map<Integer, String> mapaEquipo = new HashMap<>();
+
+
+        for (int i = 0; i < jugadores.length; i++) {
+            mapaEquipo.put(i + 1, posiciones[i] + ": " + jugadores[i]);
+        }
+
+
+int opc=0;
+boolean seguir=true;
+while (seguir){
+
+    System.out.println("----- Menú -----");
+    System.out.println("1. Mostrar Plantel");
+    System.out.println("2. Salir");
+    System.out.print("Ingrese una opción: ");
+    opc = teclado.nextInt();
+    switch (opc){
+            case 1:for (Map.Entry<Integer, String> entrada : mapaEquipo.entrySet()) {
+                System.out.println(entrada.getKey() + ". " + entrada.getValue());
+                System.out.println("-----------------------------");
+
+            } break;
+        case 2:
+            System.out.println("Gracias por visitar al equipo,"+"\t (Codigo en prueba betta jajaja)");
+            seguir=false;
+        }
+    }}
 }
